@@ -1,0 +1,255 @@
+<!DOCTYPE HTML>
+<!--
+	Website designed by: #19 Jamil "BΛBA" Matin 
+	Fall'22 Gamma Class
+-->
+<html>
+	<head>
+		<title>Contact Us</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<!--Validate form-->
+		<script>
+			function validateForm() {
+				var name = document.getElementById("name").value;
+				var phone = document.getElementById("phone").value;
+				var email = document.getElementById("email").value;
+				var message = document.getElementById("message").value;
+		
+				// Basic email validation
+				var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+				if (!emailRegex.test(email)) {
+					alert("Please enter a valid email address");
+					return false;
+				}
+		
+				// Basic phone number validation
+				var phoneRegex = /^[0-9]+$/;
+				if (!phoneRegex.test(phone)) {
+					alert("Please enter a valid phone number");
+					return false;
+				}
+		
+				// You can add more validation as needed
+		
+				return true; // Form is valid
+			}
+		</script>
+
+	</head>
+	<body class="left-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header">
+
+					<!-- Logo -->
+						<h1><a href="index.html">Lambda Phi Epsilon</a></h1>
+
+					<!-- Nav -->
+					<nav id="nav">
+						<ul>
+						<li id="home-tab"><a href="index.html">Home</a></li>
+						<li id="about-tab">
+							<a href="#">About</a>
+							<ul>
+								<li><a href="overview.html">Overview</a></li>
+								<li><a href="history.html">History</a></li>
+								<li><a href="leadeship.html">Leadership</a></li>
+								<li id="philanthropy-tab">
+									<a href="#">Philanthropy</a>
+									<ul>
+									<li><a href="artshow.html">Art Show</a></li>
+									<li><a href="shavealambda.html">Shave-A-Lambda</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li id="membership-tab">
+							<a href="#">Membership</a>
+							<ul>
+								<li><a href="join.html">Join</a></li>
+								<li><a href="activehouse.html">Active House</a></li>
+								<li><a href="alumni.html">Alumni</a></li>
+								<li><a href="lineagetree.html">Lineage Treee</a></li>
+								<li><a href="classes.html">Classes</a></li>
+							</ul>
+						</li>
+						<li id="events-tab">
+							<a href="#">Events</a>
+							<ul>
+								<li><a href="pastevents.html">Past Events</a></li>
+								<li><a href="futturreevents.html">Future Eventts</a></li>
+							</ul>
+						</li>
+						<li id="contact-tab"><a href="contact.html">Contact</a></li>
+						</ul>
+					</nav>
+						<script>
+							// Get the current page URL
+							const currentPage = window.location.href;
+						
+							// Get all tab elements
+							const tabs = document.querySelectorAll('#nav li');
+						
+							// Check if the tab's href is part of the current page URL and add 'current' class
+							tabs.forEach(tab => {
+							const tabLink = tab.querySelector('a');
+							if (currentPage.includes(tabLink.href)) {
+								tab.classList.add('current');
+							}
+							});
+						</script>
+
+				</section>
+
+			<!-- Main -->
+			<section id="contact" style="padding-top: 50px;">
+				<div class="container">
+					<div class="row">
+						<div class="col-4 col-12-medium">
+			
+							<!-- Sidebar -->
+							<section class="box">
+								<a href="#" class="image featured"><img src="images/contactpage.JPG" alt="" /></a>
+								<header>
+									<h3>Contact Information</h3>
+								</header>
+								<ul class="contact-info">
+									<li><strong>Email:</strong> <a href="mailto:info@example.com">okstatelambdas@gmail.com</a></li>
+									<li><strong>Phone:</strong> +1 (918) 986-7154</li>
+									<li><strong>Address:</strong> 33 Elmwood Cir. Stillwater, OK 74019</li>
+								</ul>
+							</section>
+			
+						</div>
+						<div class="col-8 col-12-medium imp-medium">
+			
+							<!-- Content -->
+							<article class="box post">
+								<header>
+									<h2>Contact Us</h2>
+									<p>Feel free to reach out to us!</p>
+								</header>
+							<!-- Contact Form -->
+							<form action="/submit_form.php" method="post" onsubmit="return validateForm()">
+								<div class="row gtr-50">
+									<div class="col-6 col-12-small">
+										<input type="text" name="name" id="name" placeholder="Your Name" />
+									</div>
+									<div class="col-6 col-12-small">
+										<input type="tel" name="phone" id="phone" placeholder="Your Phone" />
+									</div>
+									<div class="col-6 col-12-small">
+										<input type="email" name="email" id="email" placeholder="Your Email" />
+									</div>
+									<div class="col-12">
+										<textarea name="message" id="message" placeholder="Your Message" rows="4"></textarea>
+									</div>
+									<div class="col-12">
+										<ul class="actions">
+											<li><input type="submit" value="Send Message" class="primary" /></li>
+											<li><input type="reset" value="Clear Form" /></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+			
+							</article>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<style>
+				#contact {
+					padding-top: 50px;
+				}
+			</style>
+			<!-- Footer -->
+			<section id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-8 col-12-medium">
+
+							<section>
+								<header>
+									<h2>Upcoming Events</h2>
+								</header>
+								<ul class="dates">
+									<li>
+										<span class="date">Jan <strong>20</strong></span>
+										<h3><a href="#">Volunteer Event</a></h3>
+										<p>OKState Lambdas goes to volunnteer at a robotics tournament in Claremore, OK</p>
+									</li>
+									<li>
+										<span class="date">Jan <strong>29</strong></span>
+										<h3><a href="#">MGC Convocation</a></h3>
+										<p>For future rushees to learn more about the Multicultural Greek Council and the fraternities and sororities included in it</p>
+									</li>
+								</ul>
+								<section>
+									<header>
+										<h2>Contact Us!</h2>
+									</header>
+									<ul class="social">
+										<li><a class="icon brands fa-facebook-f" href="https://www.facebook.com/profile.php?id=61554415907946"><span class="label">Facebook</span></a></li>
+										<li><a class="icon brands fa-instagram" href="https://www.instagram.com/okstatelambdas/"><span class="label">Instagram</span></a></li>
+									</ul>
+									<ul class="contact">
+										<li>
+											<h3>Mail</h3>
+											<p><a href="#">okstatelambdas@gmail.com</a></p>
+										</li>
+										<li>
+											<h3>Phone</h3>
+											<p>(918) 986-7154</p>
+										</li>
+									</ul>
+								</section>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section>
+								<header>
+									<h2>What's this all about?</h2>
+								</header>
+								<a href="#" class="image featured"><img src="images/pic0001.jpg" alt="" /></a>
+								<p>
+									<strong>Lambda Phi Epsilon</strong> is an Asian-interest fraternity founded in 1981 at the University of California, Los Angeles. It emphasizes leadership, academic excellence, cultural awareness, and brotherhood. With a focus on promoting Asian-American identity, Lambda Phi Epsilon has expanded to numerous universities and is known for its commitment to community service and fostering a strong sense of brotherhood among its members.
+								</p>
+								<footer>
+									<ul class="actions">
+										<li><a href="about.html" class="button">Find out more</a></li>
+									</ul>
+								</footer>
+								
+							</section>
+						</div>
+						<div class="col-12">
+
+							<!-- Copyright -->
+								<div id="copyright">
+									<ul class="links">
+										<li>&copy; okstatelambdas. All rights reserved.</li><li>Design: <a href="#">Jamil Matin</a></li>
+									</ul>
+								</div>
+
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
